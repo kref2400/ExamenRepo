@@ -112,7 +112,7 @@ class coworkingplace extends \Controllers\PublicController
             $viewData["cwp_status_act"] = $viewData["cwp_status"] == "ACT";
             $viewData["cwp_status_ina"] = $viewData["cwp_status"] == "INA";
 
-            if ($viewData["mode"] == "DEL" || $viewData["mode"] == "DSP") {
+            if ($viewData["mode"] == "DEL" || $viewData["mode"] == "DSP") { /*Visualizar*/
                 $viewData["readonly"] = "readonly";
                 $viewData["showCommitBtn"]  = $viewData["mode"] == "DEL";
             }

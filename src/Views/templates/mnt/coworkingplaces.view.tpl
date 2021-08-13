@@ -25,7 +25,7 @@
     {{foreach coworkingplaces}}
     <tr>
       <td>{{rownum}}</td>
-       <td><a href="index.php?page=mnt_coworkingplace&mode=DSP&id={{cwp_id}}">{{cwp_name}}</a></td>
+       <td><a href="index.php?page=mnt_coworkingplace&mode=DSP&id={{cwp_id}}">{{cwp_name}}</a></td><!--Visualizar-->
       <td class = "hidden-s">{{cwp_email}}</td>
       <td class = "hidden-s">{{cwp_phone}}</td>
       <td class = "hidden-s">{{cwp_type}}</td>
