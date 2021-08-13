@@ -31,9 +31,9 @@
       <td class = "hidden-s">{{cwp_type}}</td>
       <td>{{cwp_status}}</td>
       <td class="center">
-         <a href="index.php?page=mnt_coworkingplace&mode=UPD&id={{pianoid}}">Editar</a>
+         <a href="index.php?page=mnt_coworkingplace&mode=UPD&id={{cwp_id}}">Editar</a>
         &nbsp;
-        <a href="index.php?page=mnt_coworkingplace&mode=DEL&id={{pianoid}}">Eliminar</a>
+        <a href="index.php?page=mnt_coworkingplace&mode=DEL&id={{cwp_id}}">Eliminar</a>
       </td>
     </tr>
 {{endfor coworkingplaces}}

@@ -50,14 +50,30 @@ class coworkingplace extends \Controllers\PublicController
                     if ($ok) {
                         \Utilities\Site::redirectToWithMsg(
                             "index.php?page=mnt_coworkingplaces",
-                            "pelicula Panel agregado Exitosamente"
+                            "coworkinplace Panel agregado Exitosamente"
+                        );
+                    }
+                    break;
+                case "UPD":
+                    $ok = \Dao\coworkingplacesPanel::updatecoworkingplaces(
+                        $viewData["cwp_name"],
+                        $viewData["cwp_email"],
+                        $viewData["cwp_phone"],
+                        $viewData["cwp_type"],
+                        $viewData["cwp_status"],
+                        $viewData["cwp_id"]
+                    );
+                    if ($ok) {
+                        \Utilities\Site::redirectToWithMsg(
+                            "index.php?page=mnt_coworkingplaces",
+                            "coworking Panel actualizado Exitosamente"
                         );
                     }
                     break;
             }
         } else {
             $viewData["mode"] = $_GET["mode"];
-            $viewData["idpelicula"] = isset($_GET["id"]) ? $_GET["id"] : 0;
+            $viewData["cwp_id"] = isset($_GET["id"]) ? $_GET["id"] : 0;
         }
         //Visualizar los Datos
         if ($viewData["mode"] == "INS") {
@@ -75,7 +91,7 @@ class coworkingplace extends \Controllers\PublicController
             }
 
             // Mas rapido lazy developers
-            \Utilities\ArrUtils::mergeFullArrayTo($pelicula, $viewData);
+            \Utilities\ArrUtils::mergeFullArrayTo($coworkingplaces, $viewData);
             $viewData["ModalTitle"] = sprintf(
                 $ModalTitles[$viewData["mode"]],
                 $viewData["cwp_id"],
