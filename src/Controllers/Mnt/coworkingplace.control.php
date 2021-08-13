@@ -70,6 +70,18 @@ class coworkingplace extends \Controllers\PublicController
                         );
                     }
                     break;
+
+                case "DEL":
+                    $ok = \Dao\coworkingplacesPanel::deletecoworkingplaces(
+                        $viewData["cwp_id"]
+                    );
+                    if ($ok) {
+                        \Utilities\Site::redirectToWithMsg(
+                            "index.php?page=mnt_coworkingplaces",
+                            "coworking Panel eliminado Exitosamente"
+                        );
+                    }
+                    break;
             }
         } else {
             $viewData["mode"] = $_GET["mode"];
@@ -77,7 +89,7 @@ class coworkingplace extends \Controllers\PublicController
         }
         //Visualizar los Datos
         if ($viewData["mode"] == "INS") {
-            $viewData["ModalTitle"] = "Agregando nueva Pelicula Panel";
+            $viewData["ModalTitle"] = "Agregando nueva coworking Panel";
         } else {
             //aqui obtenemos el registro por id.
             $coworkingplaces = \Dao\coworkingplacesPanel::getcoworkingplacesById($viewData["cwp_id"]);
